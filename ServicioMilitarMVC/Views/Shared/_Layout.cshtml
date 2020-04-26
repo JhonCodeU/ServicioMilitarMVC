@@ -5,30 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/img/Style.css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href=" @Url.Content("~/img/Style.css") " rel="stylesheet" type="text/css" />
+    <style>
+    body { background: url("https://cdnmundo5.img.sputniknews.com/img/109000/84/1090008416_0:338:3162:2048_1000x541_80_0_0_49facfb43a8bb91ce770d163f881bfb1.jpg"); background-repeat: no-repeat; background-size: cover; background-attachment: fixed; }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: #ffdd00;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Campania", "Index", "Campania")</li>
-                    <li>@Html.ActionLink("Cuerpo", "Index", "Cuerpo")</li>
-                    <li>@Html.ActionLink("Cuartel", "Index", "Cuartel")</li>
-                    <li>@Html.ActionLink("Servicio", "Index", "Servicio")</li>
-                    <li>@Html.ActionLink("Soldado", "Index", "Soldado")</li>
-                </ul>
+            <div class="navbar-wrapper">
+                <div class="container">
+                    <nav class="navbar navbar-inverse navbar-static-top">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#"><h1 style="color: #fff;">Servicio Militar</h1></a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="uls nav navbar-nav navbar-right cl-effect-20">
+                                <li>@Html.ActionLink("Campania", "Index", "Campania")</li>
+                                <li>@Html.ActionLink("Cuerpo", "Index", "Cuerpo")</li>
+                                <li>@Html.ActionLink("Cuartel", "Index", "Cuartel")</li>
+                                <li>@Html.ActionLink("Servicio", "Index", "Servicio")</li>
+                                <li>@Html.ActionLink("Soldado", "Index", "Soldado")</li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
+    <br />
+    <br />
     <div class="container body-content">
         @RenderBody()
         <hr />
