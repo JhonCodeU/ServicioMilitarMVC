@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="servicioMilitarModelStoreContainer" CdmEntityContainer="servicioMilitarEntities">
+    <EntitySetMapping Name="CAMPANIA">
+      <EntityTypeMapping TypeName="servicioMilitarModel.CAMPANIA">
+        <MappingFragment StoreEntitySet="CAMPANIA">
+          <ScalarProperty Name="numeroCampania" ColumnName="numeroCampania" />
+          <ScalarProperty Name="actividad" ColumnName="actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUARTEL">
+      <EntityTypeMapping TypeName="servicioMilitarModel.CUARTEL">
+        <MappingFragment StoreEntitySet="CUARTEL">
+          <ScalarProperty Name="codigoCuartel" ColumnName="codigoCuartel" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUERPO">
+      <EntityTypeMapping TypeName="servicioMilitarModel.CUERPO">
+        <MappingFragment StoreEntitySet="CUERPO">
+          <ScalarProperty Name="codigocuerpo" ColumnName="codigocuerpo" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICIO">
+      <EntityTypeMapping TypeName="servicioMilitarModel.SERVICIO">
+        <MappingFragment StoreEntitySet="SERVICIO">
+          <ScalarProperty Name="numeroServicio" ColumnName="numeroServicio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="codigoSoldado" ColumnName="codigoSoldado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLDADO">
+      <EntityTypeMapping TypeName="servicioMilitarModel.SOLDADO">
+        <MappingFragment StoreEntitySet="SOLDADO">
+          <ScalarProperty Name="codigoSoldado" ColumnName="codigoSoldado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="grado" ColumnName="grado" />
+          <ScalarProperty Name="codigocuerpo" ColumnName="codigocuerpo" />
+          <ScalarProperty Name="numeroCampania" ColumnName="numeroCampania" />
+          <ScalarProperty Name="codigoCuartel" ColumnName="codigoCuartel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,39 @@
+﻿@model List<ServicioMilitarMVC.Models.View_Models.ListSoldadoViewModels>
+@{
+    ViewBag.Title = "Mis datos de Soldado";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<div class="row" style="text-align:right; padding:5px;">
+    <a href="~/Soldado/Nuevo" class="btn btn-primary">Nuevo Soldado</a>
+</div>
+<div class="row">
+
+    <div class="col-md-12"></div>
+    <table class="table">
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Grado</th>
+            <th>Codigo Cuerpo</th>
+            <th>Numero Campania</th>
+            <th>Codigo Cuerpo</th>
+            <th>Codigo Cuartel</th>
+        </tr>
+        @foreach (var elementos in Model)
+        {
+            <tr>
+                <td>@elementos.codigoSoldado</td>
+                <td>@elementos.nombre</td>
+                <td>@elementos.apellido</td>
+                <td>@elementos.grado</td>
+                <td>@elementos.numeroCapania</td>
+                <td>@elementos.codigoCuerpo</td>
+                <td>@elementos.codigoCuartel</td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="servicioMilitarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CAMPANIA">
+    <Key>
+      <PropertyRef Name="numeroCampania" />
+    </Key>
+    <Property Name="numeroCampania" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="actividad" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CUARTEL">
+    <Key>
+      <PropertyRef Name="codigoCuartel" />
+    </Key>
+    <Property Name="codigoCuartel" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="10" />
+    <Property Name="ubicacion" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CUERPO">
+    <Key>
+      <PropertyRef Name="codigocuerpo" />
+    </Key>
+    <Property Name="codigocuerpo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="denominacion" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="SERVICIO">
+    <Key>
+      <PropertyRef Name="numeroServicio" />
+    </Key>
+    <Property Name="numeroServicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="20" />
+    <Property Name="codigoSoldado" Type="int" />
+  </EntityType>
+  <EntityType Name="SOLDADO">
+    <Key>
+      <PropertyRef Name="codigoSoldado" />
+    </Key>
+    <Property Name="codigoSoldado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="10" />
+    <Property Name="apellido" Type="varchar" MaxLength="10" />
+    <Property Name="grado" Type="varchar" MaxLength="10" />
+    <Property Name="codigocuerpo" Type="int" />
+    <Property Name="numeroCampania" Type="int" />
+    <Property Name="codigoCuartel" Type="int" />
+  </EntityType>
+  <Association Name="FK__SERVICIO__codigo__1B0907CE">
+    <End Role="SOLDADO" Type="Self.SOLDADO" Multiplicity="0..1" />
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SOLDADO">
+        <PropertyRef Name="codigoSoldado" />
+      </Principal>
+      <Dependent Role="SERVICIO">
+        <PropertyRef Name="codigoSoldado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SOLDADO__codigoc__164452B1">
+    <End Role="CUERPO" Type="Self.CUERPO" Multiplicity="0..1" />
+    <End Role="SOLDADO" Type="Self.SOLDADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUERPO">
+        <PropertyRef Name="codigocuerpo" />
+      </Principal>
+      <Dependent Role="SOLDADO">
+        <PropertyRef Name="codigocuerpo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SOLDADO__codigoC__182C9B23">
+    <End Role="CUARTEL" Type="Self.CUARTEL" Multiplicity="0..1" />
+    <End Role="SOLDADO" Type="Self.SOLDADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUARTEL">
+        <PropertyRef Name="codigoCuartel" />
+      </Principal>
+      <Dependent Role="SOLDADO">
+        <PropertyRef Name="codigoCuartel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SOLDADO__numeroC__173876EA">
+    <End Role="CAMPANIA" Type="Self.CAMPANIA" Multiplicity="0..1" />
+    <End Role="SOLDADO" Type="Self.SOLDADO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAMPANIA">
+        <PropertyRef Name="numeroCampania" />
+      </Principal>
+      <Dependent Role="SOLDADO">
+        <PropertyRef Name="numeroCampania" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="servicioMilitarModelStoreContainer">
+    <EntitySet Name="CAMPANIA" EntityType="Self.CAMPANIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUARTEL" EntityType="Self.CUARTEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUERPO" EntityType="Self.CUERPO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOLDADO" EntityType="Self.SOLDADO" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__SERVICIO__codigo__1B0907CE" Association="Self.FK__SERVICIO__codigo__1B0907CE">
+      <End Role="SOLDADO" EntitySet="SOLDADO" />
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SOLDADO__codigoc__164452B1" Association="Self.FK__SOLDADO__codigoc__164452B1">
+      <End Role="CUERPO" EntitySet="CUERPO" />
+      <End Role="SOLDADO" EntitySet="SOLDADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SOLDADO__codigoC__182C9B23" Association="Self.FK__SOLDADO__codigoC__182C9B23">
+      <End Role="CUARTEL" EntitySet="CUARTEL" />
+      <End Role="SOLDADO" EntitySet="SOLDADO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SOLDADO__numeroC__173876EA" Association="Self.FK__SOLDADO__numeroC__173876EA">
+      <End Role="CAMPANIA" EntitySet="CAMPANIA" />
+      <End Role="SOLDADO" EntitySet="SOLDADO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
