@@ -1,0 +1,26 @@
+﻿@model ServicioMilitarMVC.Models.CUERPO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CUERPO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.denominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denominacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigocuerpo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

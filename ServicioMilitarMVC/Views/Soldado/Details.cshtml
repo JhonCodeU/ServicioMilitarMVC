@@ -1,0 +1,66 @@
+﻿@model ServicioMilitarMVC.Models.SOLDADO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SOLDADO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAMPANIA.actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAMPANIA.actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUARTEL.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUARTEL.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUERPO.denominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUERPO.denominacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigoSoldado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

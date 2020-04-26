@@ -1,0 +1,26 @@
+﻿@model ServicioMilitarMVC.Models.CAMPANIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CAMPANIA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.actividad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.numeroCampania }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

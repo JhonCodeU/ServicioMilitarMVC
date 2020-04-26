@@ -1,0 +1,72 @@
+﻿@model ServicioMilitarMVC.Models.SOLDADO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SOLDADO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAMPANIA.actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAMPANIA.actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUARTEL.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUARTEL.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUERPO.denominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUERPO.denominacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

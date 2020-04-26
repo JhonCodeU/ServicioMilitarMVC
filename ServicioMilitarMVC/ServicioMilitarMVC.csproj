@@ -128,7 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CampaniaController.cs" />
+    <Compile Include="Controllers\CuartelController.cs" />
+    <Compile Include="Controllers\CuerpoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServicioController.cs" />
     <Compile Include="Controllers\SoldadoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +219,31 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Soldado\Index.cshtml" />
+    <Content Include="Views\Cuartel\Create.cshtml" />
+    <Content Include="Views\Cuartel\Delete.cshtml" />
+    <Content Include="Views\Cuartel\Details.cshtml" />
+    <Content Include="Views\Cuartel\Edit.cshtml" />
+    <Content Include="Views\Cuartel\Index.cshtml" />
+    <Content Include="Views\Campania\Create.cshtml" />
+    <Content Include="Views\Campania\Delete.cshtml" />
+    <Content Include="Views\Campania\Details.cshtml" />
+    <Content Include="Views\Campania\Edit.cshtml" />
+    <Content Include="Views\Campania\Index.cshtml" />
+    <Content Include="Views\Cuerpo\Create.cshtml" />
+    <Content Include="Views\Cuerpo\Delete.cshtml" />
+    <Content Include="Views\Cuerpo\Details.cshtml" />
+    <Content Include="Views\Cuerpo\Edit.cshtml" />
+    <Content Include="Views\Cuerpo\Index.cshtml" />
+    <Content Include="Views\Servicio\Create.cshtml" />
+    <Content Include="Views\Servicio\Delete.cshtml" />
+    <Content Include="Views\Servicio\Details.cshtml" />
+    <Content Include="Views\Servicio\Edit.cshtml" />
+    <Content Include="Views\Servicio\Index.cshtml" />
+    <Content Include="Views\Soldado\Nuevo.cshtml" />
+    <Content Include="Views\Soldado\Create.cshtml" />
+    <Content Include="Views\Soldado\Delete.cshtml" />
+    <Content Include="Views\Soldado\Details.cshtml" />
+    <Content Include="Views\Soldado\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
